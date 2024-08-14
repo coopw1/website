@@ -2,29 +2,89 @@
 import { Image } from 'astro:assets'
 
 import localCoopwAvatar from '../assets/coopw.png'
+import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Home</title>
-	</head>
-	<body>
-        <header></header>
-		<main>
-            <section class="hero">
-            <div class="hero-content">
-                <h1>Hey, I'm <span class="gradient-text">coopw</span>!</h1>
-                <p>Cybersecurity Student, Game Player, and Idoit</p>
-            </div>
-            <div class="hero-image">
-                <Image src={localCoopwAvatar}  alt="Coopw's avatar" class="hero-image"/>
-            </section>
-        </main>
-	</body>
-</html>
+<Layout	title="Home">
+	<section class="hero">
+	<div class="hero-content">
+		<h1>Hey, I'm <span class="gradient-text">coopw</span>!</h1>
+		<p>Cybersecurity Student, Game Player, and Idoit</p>
+	</div>
+	<div>
+		<Image src={localCoopwAvatar}  alt="Coopw's avatar" loading="eager" class="hero-image"/>
+	</section>
+	<section class="main-text">
+		<div class="about-me">
+			<h2>About Me</h2>
+			<p>
+				hi!!! I'm an 18 year old student at a Universty in the Eastern United States majoring in Cybersecurity. 
+			</p>
+			<p>
+				I play a lot of random games, like Minecraft and osu!.
+			</p>
+		</div>
+		<div class="contact-me">
+			<h2>Contact Me</h2>
+			<ul>
+				<li><a href="/discord">@coopw</a> on discord</li>
+				<li><a href="https://matrix.to/#/@coopw:matrix.org">@coopw:matrix.org</a> on matrix</li>
+			</ul>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 50vh;
+  width: 100%;
+  background-color: var(--mantle);
+  gap: 5vh 10vw;
+  padding: max(5%, 50px) 0;
+}
+
+.hero-content {
+  height: 10vh;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--pink) 0,
+    var(--yellow) 50%,
+    var(--sapphire) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-content p {
+  color: var(--subtext0);
+  font-size: 1rem;
+  margin: 16px;
+}
+
+.hero-image {
+  border-radius: 50%;
+  width: 25vw;
+  height: 25vw;
+  min-width: min(400px, 80vw);
+  min-height: min(400px, 80vw);
+  /* margin: 5% 0; */
+  /* border: 5px solid var(--sapphire); */
+}
+
+
+</style>

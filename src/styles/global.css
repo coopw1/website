@@ -2,6 +2,8 @@
   --pink: #f5c2e7;
   --yellow: #f9e2af;
   --sapphire: #74c7ec;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
   --text: #cdd6f4;
   --subtext1: #bac2de;
   --subtext0: #a6adc8;
@@ -11,6 +13,7 @@
 }
 
 header {
+  position: fixed;
   background-color: var(--crust);
   width: 100%;
   height: 10vh;
@@ -19,55 +22,74 @@ body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
   background-color: var(--base);
+  min-height: 100vh;
+}
+main {
+  min-height: 80vh;
 }
 
-.hero {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  min-height: 70vh;
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+a:hover,
+a:hover:visited {
+  color: var(--sapphire);
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--text);
+}
+
+.navbar-spacer {
   width: 100%;
-  background-color: var(--mantle);
-  gap: 10%;
-}
-
-.hero-content {
   height: 10vh;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 3rem;
   color: var(--text);
   margin: 0;
 }
 
-.gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--pink) 0,
-    var(--yellow) 50%,
-    var(--sapphire) 100%
-  );
-  background-clip: text;
-  color: transparent;
+h2 {
+  color: var(--text);
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
 
-p {
-  color: var(--subtext0);
+p,
+li {
+  color: var(--text);
   font-size: 1rem;
 }
 
-.hero-image {
-  border-radius: 50%;
-  width: 25vw;
-  height: 25vw;
-  min-width: 300px;
-  min-height: 300px;
+footer {
+  background-color: var(--crust);
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  margin: 0.25rem;
+  color: var(--subtext0);
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 80%;
+  margin: 5vh auto;
+}
+
+.main-text p,
+.main-text ul {
+  margin: 0.25rem 0;
+  font-size: 1rem;
 }
