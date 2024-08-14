@@ -6,6 +6,8 @@ interface Props {
 const { title } = Astro.props;
 
 import '../styles/global.css';
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <!doctype html>
@@ -19,19 +21,10 @@ import '../styles/global.css';
 		<title>{title}</title>
 	</head>
 	<body>
-        <header></header>
-		
+        <Navigation />
 			<main>
-				<div class="navbar-spacer"></div>
 				<slot />
         	</main>
-			
-			<footer>
-				<p>Made with &lt;3 by coopw</p>
-				<p><a href="https://github.com/coopw1/website">Source Code</a></p>
-				<p>Copyright (c) 2024 coopw</p>
-				<p><a href="/license">License</a></p>
-				<p>Hosted on <a href="https://pages.cloudflare.com/">Cloudflare Pages</a></p>
-			</footer>
+			<Footer />
 		</body>
 	</html>
