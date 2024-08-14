@@ -1,0 +1,73 @@
+:root {
+  --pink: #f5c2e7;
+  --yellow: #f9e2af;
+  --sapphire: #74c7ec;
+  --text: #cdd6f4;
+  --subtext1: #bac2de;
+  --subtext0: #a6adc8;
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+}
+
+header {
+  background-color: var(--crust);
+  width: 100%;
+  height: 10vh;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background-color: var(--base);
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 70vh;
+  width: 100%;
+  background-color: var(--mantle);
+  gap: 10%;
+}
+
+.hero-content {
+  height: 10vh;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+h1 {
+  font-size: 3em;
+  color: var(--text);
+  margin: 0;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--pink) 0,
+    var(--yellow) 50%,
+    var(--sapphire) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+p {
+  color: var(--subtext0);
+  font-size: 1rem;
+}
+
+.hero-image {
+  border-radius: 50%;
+  width: 25vw;
+  height: 25vw;
+  min-width: 300px;
+  min-height: 300px;
+}

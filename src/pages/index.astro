@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets'
+
+import localCoopwAvatar from '../assets/coopw.png'
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Home</title>
+	</head>
+	<body>
+        <header></header>
+		<main>
+            <section class="hero">
+            <div class="hero-content">
+                <h1>Hey, I'm <span class="gradient-text">coopw</span>!</h1>
+                <p>Cybersecurity Student, Game Player, and Idoit</p>
+            </div>
+            <div class="hero-image">
+                <Image src={localCoopwAvatar}  alt="Coopw's avatar" class="hero-image"/>
+            </section>
+        </main>
+	</body>
+</html>
