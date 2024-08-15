@@ -28,16 +28,20 @@ main {
   min-height: 80vh;
 }
 
-a {
+main a,
+footer a {
   color: var(--blue);
   text-decoration: none;
 }
-a:hover,
-a:hover:visited {
+main a:hover,
+footer a,
+main a:hover:visited,
+footer a:visited {
   color: var(--sapphire);
   text-decoration: underline;
 }
-a:visited {
+main a:visited,
+footer a:visited {
   color: var(--text);
 }
 
@@ -92,4 +96,12 @@ footer p {
 .main-text ul {
   margin: 0.25rem 0;
   font-size: 1rem;
+}
+
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
 }
