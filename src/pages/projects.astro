@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro'; 
+import { Icon } from 'astro-icon/components'
+
+
+---
+<Layout title="Projects">
+    <section class="title">
+        <h1>Projects</h1>
+        <p>Here's my small tiny itty bitty collection of projects!</p>
+    </section>
+    <section class="projects">
+        <div class="project">
+            <div class="project-text">
+                <p>BrainzBot</p>
+                <p>A Discord Bot for ListenBrainz, an open source project for tracking listens!</p>
+            </div>
+            <div class="links">
+                <a href="https://discord.com/oauth2/authorize?client_id=1191438412159389806&permissions=414464658496&scope=bot" target="_blank"><Icon name="mdi:web" class="grow" /></a>
+                <a href="https://github.com/coopw1/BrainzBot" target="_blank"><Icon name="mdi:github" class="grow" /></a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-text">
+                <p>dumbgay.com</p>
+                <p>This website! The first website I've ever made.</p>
+            </div>
+            <div class="links">
+                <a href="https://dumbgay.com" target="_blank"><Icon name="mdi:web" class="grow" /></a>
+                <a href="https://github.com/coopw1/BrainzBot" target="_blank"><Icon name="mdi:github" class="grow" /></a>
+            </div>
+        </div>
+        <div class="project">
+            <!-- More to come -->
+            <p class="plus-symbol">+</p>
+            <p>More to come!</p>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        margin: 5vh 20vw;
+    }
+    main {
+        overflow: hidden;
+    }
+
+    .projects {
+    display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
+       grid-gap: 20px;
+       justify-content: center;
+       padding: initial;
+    }
+    .project {
+        list-style-type: none;
+        background-color: var(--surface0);
+        border-radius: 10px;
+        box-shadow: 0 0 10px var(--surface0);
+        border: 2px solid var(--overlay0);
+        width: 400px;
+        height: 200px;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project:hover {
+        box-shadow: 0 0 10px var(--sapphire);
+        border: 2px solid var(--sapphire);
+    }
+
+    .project-text {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        width: 380;
+        margin: 0;
+        height: 70%;
+        
+    }
+    .project-text p:first-of-type {
+        font-size: 1rem;
+        color: var(--text);
+        font-weight: bold;
+        margin: 20px;
+        width: 360px
+    }
+    .project-text p {
+        font-size: 1rem;
+        color: var(--subtext0);
+        margin: 0 20px;
+        width: 360px
+    }
+
+    .plus-symbol {
+        font-size: 96px;
+        margin: 0;
+    } 
+
+    .links {
+        display: flex;
+        gap: 10px;
+        width: 90%;
+        height: 20%;
+        margin: 5% 5%;
+        align-items: center;
+    }
+    [data-icon] {
+        font-size: 2rem;
+        color: var(--subtext0);
+        border: 2px solid var(--subtext0);
+        border-radius: 50%; 
+    }
+    [data-icon]:hover {
+        color: var(--sapphire);
+        border: 2px solid var(--sapphire);
+    }
+
+
+    </style>
