@@ -13,23 +13,26 @@ import { Icon } from 'astro-icon/components'
                 <p>BrainzBot</p>
                 <p>A Discord Bot for ListenBrainz, an open source project for tracking listens!</p>
             </div>
+            <a href="https://github.com/coopw1/BrainzBot" target="_blank" class="cover-link"><div class="link-container"></div></a>
             <div class="links">
                 <a href="https://discord.com/oauth2/authorize?client_id=1191438412159389806&permissions=414464658496&scope=bot" target="_blank"><Icon name="mdi:web" class="grow" /></a>
                 <a href="https://github.com/coopw1/BrainzBot" target="_blank"><Icon name="mdi:github" class="grow" /></a>
             </div>
+           
         </div>
         <div class="project">
             <div class="project-text">
                 <p>dumbgay.com</p>
                 <p>This website! The first website I've ever made.</p>
             </div>
+            <a href="https://github.com/coopw1/website" target="_blank" class="cover-link"><div class="link-container"></div></a>
             <div class="links">
                 <a href="https://dumbgay.com" target="_blank"><Icon name="mdi:web" class="grow" /></a>
                 <a href="https://github.com/coopw1/website" target="_blank"><Icon name="mdi:github" class="grow" /></a>
             </div>
         </div>
+        
         <div class="project">
-            <!-- More to come -->
             <p class="plus-symbol">+</p>
             <p>More to come!</p>
         </div>
@@ -75,21 +78,22 @@ import { Icon } from 'astro-icon/components'
         justify-content:flex-start;
         width: 380;
         margin: 0;
-        height: 70%;
+        height: 140px;
         
     }
     .project-text p:first-of-type {
-        font-size: 1rem;
+        font-size: 16px;
         color: var(--text);
         font-weight: bold;
         margin: 20px;
         width: 360px
     }
-    .project-text p {
-        font-size: 1rem;
+    .project-text p:last-of-type {
+        font-size: 16px;
         color: var(--subtext0);
         margin: 0 20px;
-        width: 360px
+        width: 360px;
+        height: 63px
     }
 
     .plus-symbol {
@@ -101,8 +105,8 @@ import { Icon } from 'astro-icon/components'
         display: flex;
         gap: 10px;
         width: 90%;
-        height: 20%;
-        margin: 5% 5%;
+        height: 40px;
+        margin: 20px 20px;
         align-items: center;
     }
     [data-icon] {
@@ -115,6 +119,16 @@ import { Icon } from 'astro-icon/components'
         color: var(--sapphire);
         border: 2px solid var(--sapphire);
     }
+    .links a {
+        width: 36px;
+        height: 36px;
+    }
 
+    .link-container,
+    .cover-link  {
+        width: 400px;
+        height: 200px;
+        margin-top: -124px
+    }
 
     </style>
