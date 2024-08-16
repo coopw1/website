@@ -18,6 +18,9 @@ import { Icon } from 'astro-icon/components'
                 <a href="https://discord.com/oauth2/authorize?client_id=1191438412159389806&permissions=414464658496&scope=bot" target="_blank"><Icon name="mdi:web" class="grow" /></a>
                 <a href="https://github.com/coopw1/BrainzBot" target="_blank"><Icon name="mdi:github" class="grow" /></a>
             </div>
+            <div class="skills">
+                <a href="https://nodejs.org/en/about" target="_blank"><Icon name="skill-icons:nodejs-dark" class="grow" /></a>
+            </div>
            
         </div>
         <div class="project">
@@ -29,6 +32,9 @@ import { Icon } from 'astro-icon/components'
             <div class="links">
                 <a href="https://dumbgay.com" target="_blank"><Icon name="mdi:web" class="grow" /></a>
                 <a href="https://github.com/coopw1/website" target="_blank"><Icon name="mdi:github" class="grow" /></a>
+            </div>
+            <div class="skills">
+                <a href="https://astro.build/" target="_blank"><Icon name="skill-icons:astro" class="grow" /></a>
             </div>
         </div>
         
@@ -55,7 +61,6 @@ import { Icon } from 'astro-icon/components'
        padding: initial;
     }
     .project {
-        list-style-type: none;
         background-color: var(--surface0);
         border-radius: 10px;
         box-shadow: 0 0 10px var(--surface0);
@@ -64,8 +69,12 @@ import { Icon } from 'astro-icon/components'
         height: 200px;
         transition: all 0.2s ease-in-out;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        flex-direction: row;
         align-items: center;
+    }
+    .project:last-of-type {
+        flex-direction: column;
     }
     .project:hover {
         box-shadow: 0 0 10px var(--sapphire);
@@ -76,9 +85,9 @@ import { Icon } from 'astro-icon/components'
         display: flex;
         flex-direction: column;
         justify-content:flex-start;
-        width: 380;
+        width: 400px;
         margin: 0;
-        height: 140px;
+        height: 124px;
         
     }
     .project-text p:first-of-type {
@@ -105,23 +114,46 @@ import { Icon } from 'astro-icon/components'
         display: flex;
         gap: 10px;
         width: 82px;
-        height: 40px;
+        height: 36px;
         margin: 20px;
-        margin-right: 298px;
+        margin-right: 98px;
         margin-top: -56px;
         align-items: center;
     }
+    .skills {
+        display: flex;
+        gap: 10px;
+        width: 36px;
+        height: 36px;
+        margin: 20px;
+        margin-left: 144px;
+        margin-top: -56px;
+        align-items: center;
+    }
+    
     [data-icon] {
-        font-size: 2rem;
-        color: var(--subtext0);
         border: 2px solid var(--subtext0);
         border-radius: 50%; 
     }
-    [data-icon]:hover {
-        color: var(--sapphire);
-        border: 2px solid var(--sapphire);
+    .links [data-icon] {
+        font-size: 32px;
+        color: var(--subtext0);
     }
+    .skills [data-icon] {
+        font-size: 26px;
+        padding: 3px;
+        color: var(--subtext0);
+    }
+    [data-icon]:hover {
+        color: var(--sapphire) !important;
+        border: 2px solid var(--sapphire) !important
+    }
+
     .links a {
+        width: 36px;
+        height: 36px;
+    }
+    .skills a {
         width: 36px;
         height: 36px;
     }
