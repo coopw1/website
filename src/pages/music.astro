@@ -8,7 +8,7 @@ import Layout from '../layouts/Layout.astro';
         <p>Some epic cool music things i like :3!</p>
     </section>
     <section class="music">
-        
+        <div class="album-display"></div>
     </section>
 </Layout>
 
@@ -17,6 +17,11 @@ import Layout from '../layouts/Layout.astro';
         display: flex;
         flex-direction: column;
         justify-content:flex-start;
+        margin: 5vh 20vw;
+    }
+    .album-display {
+
+        gap: 1rem;
         margin: 5vh 20vw;
     }
 </style>
