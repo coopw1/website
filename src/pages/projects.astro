@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'; 
+import Card from '../components/Card.astro';    
+
 import { Icon } from 'astro-icon/components'
 ---
 <Layout title="Projects">
@@ -8,36 +10,8 @@ import { Icon } from 'astro-icon/components'
         <p>Here's my small tiny itty bitty collection of projects!</p>
     </section>
     <section class="projects">
-        <div class="project">
-            <div class="project-text">
-                <p>BrainzBot</p>
-                <p>A Discord Bot for ListenBrainz, an open source project for tracking listens!</p>
-            </div>
-            <a href="https://github.com/coopw1/BrainzBot" target="_blank" class="cover-link"><div class="link-container"></div></a>
-            <div class="links">
-                <a href="https://discord.com/oauth2/authorize?client_id=1191438412159389806&permissions=414464658496&scope=bot" target="_blank"><Icon name="mdi:web" class="grow" /></a>
-                <a href="https://github.com/coopw1/BrainzBot" target="_blank"><Icon name="mdi:github" class="grow" /></a>
-            </div>
-            <div class="skills">
-                <a href="https://nodejs.org/en/about" target="_blank"><Icon name="skill-icons:nodejs-dark" class="grow" /></a>
-            </div>
-           
-        </div>
-        <div class="project">
-            <div class="project-text">
-                <p>dumbgay.com</p>
-                <p>This website! The first website I've ever made.</p>
-            </div>
-            <a href="https://github.com/coopw1/website" target="_blank" class="cover-link"><div class="link-container"></div></a>
-            <div class="links">
-                <a href="https://dumbgay.com" target="_blank"><Icon name="mdi:web" class="grow" /></a>
-                <a href="https://github.com/coopw1/website" target="_blank"><Icon name="mdi:github" class="grow" /></a>
-            </div>
-            <div class="skills">
-                <a href="https://astro.build/" target="_blank"><Icon name="skill-icons:astro" class="grow" /></a>
-            </div>
-        </div>
-        
+        <Card title="BrainzBot" body="A Discord Bot for ListenBrainz, an open source project for tracking listens!" github="https://github.com/coopw1/BrainzBot" link="https://discord.com/oauth2/authorize?client_id=1191438412159389806&permissions=414464658496&scope=bot" skill="nodejs-dark" skilllink="https://nodejs.org/en/about"></Card>
+        <Card title="dumbgay.com" body="This website! The first website I've ever made." github="https://github.com/coopw1/website" link="https://dumbgay.com" skill="astro" skilllink="https://astro.build/"></Card>
         <div class="project">
             <p class="plus-symbol">+</p>
             <p>More to come!</p>
@@ -60,6 +34,7 @@ import { Icon } from 'astro-icon/components'
        justify-content: center;
        padding: initial;
     }
+
     .project {
         background-color: var(--surface0);
         border-radius: 10px;
@@ -70,39 +45,8 @@ import { Icon } from 'astro-icon/components'
         transition: all 0.2s ease-in-out;
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-    }
-    .project:last-of-type {
-        flex-direction: column;
-    }
-    .project:hover {
-        box-shadow: 0 0 10px var(--sapphire);
-        border: 2px solid var(--sapphire);
-    }
-
-    .project-text {
-        display: flex;
-        flex-direction: column;
-        justify-content:flex-start;
-        width: 400px;
-        margin: 0;
-        height: 124px;
-        
-    }
-    .project-text p:first-of-type {
-        font-size: 16px;
-        color: var(--text);
-        font-weight: bold;
-        margin: 20px;
-        width: 360px
-    }
-    .project-text p:last-of-type {
-        font-size: 16px;
-        color: var(--subtext0);
-        margin: 0 20px;
-        width: 360px;
-        height: 63px
     }
 
     .plus-symbol {
@@ -110,61 +54,6 @@ import { Icon } from 'astro-icon/components'
         margin: 0;
     } 
 
-    .links {
-        display: flex;
-        gap: 10px;
-        width: 82px;
-        height: 36px;
-        margin: 20px;
-        margin-right: 98px;
-        margin-top: -56px;
-        align-items: center;
-    }
-    .skills {
-        display: flex;
-        gap: 10px;
-        width: 36px;
-        height: 36px;
-        margin: 20px;
-        margin-left: 144px;
-        margin-top: -56px;
-        align-items: center;
-    }
     
-    [data-icon] {
-        border: 2px solid var(--subtext0);
-        border-radius: 50%; 
-    }
-    .links [data-icon] {
-        font-size: 32px;
-        color: var(--subtext0);
-    }
-    .skills [data-icon] {
-        font-size: 26px;
-        padding: 3px;
-        color: var(--subtext0);
-    }
-    [data-icon]:hover {
-        color: var(--sapphire) !important;
-        border: 2px solid var(--sapphire) !important
-    }
-
-    .links a {
-        width: 36px;
-        height: 36px;
-    }
-    .skills a {
-        width: 36px;
-        height: 36px;
-    }
-
-    .link-container,
-    .cover-link  {
-        width: 400px;
-        height: 200px;
-    }
-    .cover-link {
-        margin-top: -124px
-    }
 
     </style>
