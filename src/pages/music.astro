@@ -8,7 +8,12 @@ import Layout from '../layouts/Layout.astro';
         <p>Some epic cool music things i like :3!</p>
     </section>
     <section class="music">
-        <div class="album-display"></div>
+        <div class="albums">
+            <div class="album-display"></div>
+            <div class="album-display"></div>
+            <div class="album-display"></div>
+            <div class="album-display"></div>
+        </div>
     </section>
 </Layout>
 
@@ -19,9 +24,24 @@ import Layout from '../layouts/Layout.astro';
         justify-content:flex-start;
         margin: 5vh 20vw;
     }
+    .music {
+        margin: 0 auto;
+        width: 80vw;
+        min-height: 100px;
+        border-radius: 10px;
+        background-color: var(--surface0);
+    }
+    .albums {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .album-display {
-
-        gap: 1rem;
-        margin: 5vh 20vw;
+        margin: 2vh;
+        background-color: var(--surface1);
+        width: 40%;
+        height: 100px
     }
 </style>
