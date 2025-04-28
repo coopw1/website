@@ -1,14 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import axios from 'axios';
-import 'dotenv/config';
 
-const { LISTENBRAINZ_TOKEN, LISTENBRAINZ_USER } = process.env;
 
-const URL = `https://api.listenbrainz.org/1/stats/user/${LISTENBRAINZ_USER}/releases`;
-const headers = {
-    Authorization: `Token ${LISTENBRAINZ_TOKEN}`,
-};
+
+const URL = `https://api.listenbrainz.org/1/stats/user/coopw/releases`;
 
 const PARAMS = {
     range: "this_month",
@@ -16,7 +12,6 @@ const PARAMS = {
 };
 
 const response = await axios.get(URL, {
-    headers,
     params: PARAMS,
 })
 
