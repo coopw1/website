@@ -1,18 +1,107 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import axios from 'axios';
+import 'dotenv/config';
+
+const { LISTENBRAINZ_TOKEN, LISTENBRAINZ_USER } = process.env;
+
+const URL = `https://api.listenbrainz.org/1/stats/user/${LISTENBRAINZ_USER}/releases`;
+const headers = {
+    Authorization: `Token ${LISTENBRAINZ_TOKEN}`,
+};
+
+const PARAMS = {
+    range: "this_month",
+    count: 8,
+};
+
+const response = await axios.get(URL, {
+    headers,
+    params: PARAMS,
+})
+
+const musicData = response?.data.payload || null;
 ---
 
 <Layout title="Music">
     <section class="title">
         <h1>Cool Music</h1>
-        <p>Some epic cool music things i like :3!</p>
+        <p>My top music of this month :3</p>
     </section>
     <section class="music">
         <div class="albums">
-            <div class="album-display"></div>
-            <div class="album-display"></div>
-            <div class="album-display"></div>
-            <div class="album-display"></div>
+            <div class="album-display">
+                <img src=`http://coverartarchive.org/release/${musicData.releases[0].release_mbid}/front-250` alt="Album Cover" class="image"/>
+                <div class="album-text">
+                    <h1>
+                        <a href=`https://musicbrainz.org/release/${musicData.releases[0].release_mbid}`>{musicData.releases[0].release_name}</a> - <a href=`https://musicbrainz.org/artist/${musicData.releases[0].artist_mbids[0]}`>{musicData.releases[0].artist_name}
+                        </h1>
+                    <p>Listens: {musicData.releases[0].listen_count}</p>
+                </div>
+            </div>
+            <div class="album-display">
+                <img src=`http://coverartarchive.org/release/${musicData.releases[1].release_mbid}/front-250` alt="Album Cover" class="image"/>
+                <div class="album-text">
+                    <h1>
+                        <a href=`https://musicbrainz.org/release/${musicData.releases[1].release_mbid}`>{musicData.releases[1].release_name}</a> - <a href=`https://musicbrainz.org/artist/${musicData.releases[1].artist_mbids[0]}`>{musicData.releases[1].artist_name}
+                        </h1>
+                    <p>Listens: {musicData.releases[1].listen_count}</p>
+                </div>
+            </div>
+            <div class="album-display">
+                <img src=`http://coverartarchive.org/release/${musicData.releases[2].release_mbid}/front-250` alt="Album Cover" class="image"/>
+                <div class="album-text">
+                    <h1>
+                        <a href=`https://musicbrainz.org/release/${musicData.releases[2].release_mbid}`>{musicData.releases[2].release_name}</a> - <a href=`https://musicbrainz.org/artist/${musicData.releases[2].artist_mbids[0]}`>{musicData.releases[2].artist_name}
+                        </h1>
+                    <p>Listens: {musicData.releases[2].listen_count}</p>
+                </div>
+            </div>
+            <div class="album-display">
+                <img src=`http://coverartarchive.org/release/${musicData.releases[3].release_mbid}/front-250` alt="Album Cover" class="image"/>
+                <div class="album-text">
+                    <h1>
+                        <a href=`https://musicbrainz.org/release/${musicData.releases[3].release_mbid}`>{musicData.releases[3].release_name}</a> - <a href=`https://musicbrainz.org/artist/${musicData.releases[3].artist_mbids[0]}`>{musicData.releases[3].artist_name}
+                        </h1>
+                    <p>Listens: {musicData.releases[3].listen_count}</p>
+                </div>
+            </div>
+            <div class="album-display">
+                <img src=`http://coverartarchive.org/release/${musicData.releases[4].release_mbid}/front-250` alt="Album Cover" class="image"/>
+                <div class="album-text">
+                    <h1>
+                        <a href=`https://musicbrainz.org/release/${musicData.releases[4].release_mbid}`>{musicData.releases[4].release_name}</a> - <a href=`https://musicbrainz.org/artist/${musicData.releases[4].artist_mbids[0]}`>{musicData.releases[4].artist_name}
+                        </h1>
+                    <p>Listens: {musicData.releases[4].listen_count}</p>
+                </div>
+            </div>
+            <div class="album-display">
+                <img src=`http://coverartarchive.org/release/${musicData.releases[5].release_mbid}/front-250` alt="Album Cover" class="image"/>
+                <div class="album-text">
+                    <h1>
+                        <a href=`https://musicbrainz.org/release/${musicData.releases[5].release_mbid}`>{musicData.releases[5].release_name}</a> - <a href=`https://musicbrainz.org/artist/${musicData.releases[5].artist_mbids[0]}`>{musicData.releases[5].artist_name}
+                        </h1>
+                    <p>Listens: {musicData.releases[5].listen_count}</p>
+                </div>
+            </div>
+            <div class="album-display">
+                <img src=`http://coverartarchive.org/release/${musicData.releases[6].release_mbid}/front-250` alt="Album Cover" class="image"/>
+                <div class="album-text">
+                    <h1>
+                        <a href=`https://musicbrainz.org/release/${musicData.releases[6].release_mbid}`>{musicData.releases[6].release_name}</a> - <a href=`https://musicbrainz.org/artist/${musicData.releases[6].artist_mbids[0]}`>{musicData.releases[6].artist_name}
+                        </h1>
+                    <p>Listens: {musicData.releases[6].listen_count}</p>
+                </div>
+            </div>
+            <div class="album-display">
+                <img src=`http://coverartarchive.org/release/${musicData.releases[7].release_mbid}/front-250` alt="Album Cover" class="image"/>
+                <div class="album-text">
+                    <h1>
+                        <a href=`https://musicbrainz.org/release/${musicData.releases[7].release_mbid}`>{musicData.releases[7].release_name}</a> - <a href=`https://musicbrainz.org/artist/${musicData.releases[7].artist_mbids[0]}`>{musicData.releases[7].artist_name}
+                        </h1>
+                    <p>Listens: {musicData.releases[7].listen_count}</p>
+                </div>
+            </div>
         </div>
     </section>
 </Layout>
@@ -21,7 +110,8 @@ import Layout from '../layouts/Layout.astro';
     .title {
         display: flex;
         flex-direction: column;
-        justify-content:flex-start;
+        justify-content: center;
+        align-items: center;
         margin: 5vh 20vw;
     }
     .music {
@@ -29,7 +119,7 @@ import Layout from '../layouts/Layout.astro';
         width: 80vw;
         min-height: 100px;
         border-radius: 10px;
-        background-color: var(--surface0);
+        /* background-color: var(--surface0); */
     }
     .albums {
         display: flex;
@@ -42,6 +132,33 @@ import Layout from '../layouts/Layout.astro';
         margin: 2vh;
         background-color: var(--surface1);
         width: 40%;
-        height: 100px
+        min-width: 350px;
+        height: 100px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .image {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+    }
+    .album-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10%;
+    }
+    .album-text h1 {
+        font-size: 20px;
+        font-weight: normal;
+        margin: 0;
+        margin-left: 4%;
+        min-width: 60%;
+        max-width: 60%;
+    }
+    .album-text p {
+        min-width: 26%;
     }
 </style>
